@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class ShortUrl extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'short_code',
+        'original_url',
+        'user_id',
+        'company_id',
+        'clicks',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
+
+    public function getShortUrlAttribute()
+    {
+        return url('/' . $this->short_code);
+    }
+}
