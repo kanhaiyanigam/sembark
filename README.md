@@ -22,7 +22,7 @@ A Laravel-based URL shortening service with multi-company support and role-based
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/kanhaiyanigam/sembark.git
-cd url-shortener
+cd sembark
 ```
 
 ### 2. Install dependencies
